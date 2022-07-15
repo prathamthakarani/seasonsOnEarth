@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Season</title>
+    <style>
+      body{
+        text-align: center;
+        border: 0ch;
+        height: 150px;
+        position: relative;
+        background: #999FE0;
+        color: rgb(255, 47, 0);
+        size: 200%;
+
+      }
+      h2{
+        color: blue;
+        text-decoration-color: brown;
+        
+      }
+      .button1{
+        padding: 15px 32px;
+        display: inline-block;
+        margin: 4px 2px;
+        cursor: pointer;
+        font-size: 16px;
+        background-color: green;
+      }
+    </style>
+</head>
+
+<body>
+  <div>
+    <br><br><br><br><br><br><br><br><br>
+    <h2><b><font size= "+4">Seasons on Earth</h2></b></font>
+    <b><font size = "+2">Enter a Date </font></b> <input type="date" id="mydate">
+    <br><br>
+    <b><font size = "+2">Enter S / N : </font></b> <input type="text" id="hemi">
+    <br><br>
+    <button type="submit" class = "button1"onclick="getSeason()">Submit</button>
+  </div>
+
+<script>
+    let hemisphere;
+    let date;
+
+  function getSeason() {
+    let hemisphere = document.getElementById("hemi").value;
+    let date = document.getElementById("mydate").value;
+    
+    let mainDate = new Date(date);
+    let month = mainDate.getMonth() + 1;
+
+
+    switch (hemisphere) {
+      case "N" || "n":
+        if (month == "3" || month == "4" || month == "5") {
+          text = "Spring";
+      }
+        else if (month == "6" || month == "7" || month == "8") {
+          text = "Summer";
+      } 
+      else if (month == "9" || month == "10" || month == "11") {
+          text = "Autumn";
+      } 
+      else if (month == "12" || month == "1" || month == "2") {
+          text = "Winter";
+      }
+      break;
+
+    case "S" || "s":
+      if (month == "3" || month == "4" || month == "5") {
+          text = "Autumn";
+      } 
+      else if (month == "6" || month == "7" || month == "8") {
+          text = "Winter";
+      } 
+      else if (month == "9" || month == "10" || month == "11") {
+          text = "Spring";
+      } else if (month == "12" || month == "1" || month == "2") {
+          text = "Summer";
+      }
+      break;
+
+    default:
+      alert("Please enter S or N ");
+  }
+
+  alert(text);
+}
+</script>
+</body>
+
+</html>
